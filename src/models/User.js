@@ -34,7 +34,7 @@ userSchema.pre("save", async function (next) {
     this.password = await bcrypt.hash(this.password, salt);
 
     // Once hashing is done, call the next function
-    //next();
+    next();
 })
 
 // The Schema above will used to create the model
