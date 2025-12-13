@@ -17,7 +17,7 @@ router.post("/", protectedRoute, async (req, res) => {
         // Upload the image to cloudinary
         const uploadResponse = await cloudinary.uploader.upload(image);
         // Once upload is completed, you get an image URL
-        const imageUrl = uploadResponse.secure_url
+        const imageUrl = uploadResponse.secure_url;
         // Save to the database
         const newBook = new Book({
             title,
@@ -36,7 +36,7 @@ router.post("/", protectedRoute, async (req, res) => {
     }
 })
 
-//vExample request would come from the frontend that looks like below:
+// Example request would come from the frontend that looks like below:
 // const response = await fetch("http://localhost:3000/api/books?page=3&limit=5");
 
 // Pagination => infinite scroll & loading
